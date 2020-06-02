@@ -12,6 +12,7 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 require_relative './setup_test_database'
+
 ENV['ENVIRONMENT'] = 'test'
 
 require 'capybara/rspec'
@@ -36,6 +37,10 @@ Capybara.app = BookmarkManager
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
