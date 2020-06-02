@@ -16,6 +16,6 @@ feature 'shows page with Your Bookmarks' do
   scenario 'it displays users bookmarks' do
     visit('/')
     click_button 'Bookmarks'
-    expect(page).to have_content("google.co.uk", "aol.com")
+    expect(page).to have_content("google.com")
   end
 end
