@@ -5,8 +5,13 @@ describe Bookmark do
     expect(subject).to be_a_kind_of Bookmark
   end
 
-  it 'has array of bookmarks' do
-    expect(subject.bookmarks).to be_instance_of Array
-  end
+  describe '.all' do
+    it 'returns a list of bookmarks' do
+      bookmarks = Bookmark.all
 
-end
+      expect(bookmarks).to include "http://www.makersacademy.com"
+      expect(bookmarks).to include "http://www.destroyallsoftware.com"
+      expect(bookmarks).to include "http://www.google.com"
+    end
+  end
+end 
