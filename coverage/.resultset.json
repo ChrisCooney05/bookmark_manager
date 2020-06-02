@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/chriscooney/projects/makers/Week_4/bookmark_manager/spec/features/feature_test_spec.rb": {
+      "/Users/student/Desktop/Makers/Challenges_pairing/Bookmark_manager-week4/bookmark_manager/spec/features/feature_test_spec.rb": {
         "lines": [
           1,
           1,
@@ -20,13 +20,22 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           1,
           1,
           null,
           null
         ]
       },
-      "/Users/chriscooney/projects/makers/Week_4/bookmark_manager/spec/unit/bookmark_spec.rb": {
+      "/Users/student/Desktop/Makers/Challenges_pairing/Bookmark_manager-week4/bookmark_manager/spec/unit/bookmark_spec.rb": {
         "lines": [
           1,
           null,
@@ -55,6 +64,6 @@
         ]
       }
     },
-    "timestamp": 1591113578
+    "timestamp": 1591117015
   }
 }
