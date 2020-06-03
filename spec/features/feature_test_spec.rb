@@ -14,6 +14,21 @@ feature 'is there a bookmarks button' do
   end
 end
 
+feature 'Add bookmark' do
+  scenario 'it should allow user input' do
+    visit '/addbookmark'
+    expect(page).to have_content "Add bookmark:"
+    expect(page).to have_field "url"
+  end
+  
+  scenario 'We should be able to see an added bookmark' do
+    visit '/addbookmark'
+    fill_in 'url', with: 'https://www.bbc.co.uk/'
+    click_button 'Submit'
+    expect(page).to have_content 'https://www.bbc.co.uk'
+  end
+end
+
 ffeature 'Viewing bookmarks' do
   scenario 'A user can see bookmarks' do
     connection = PG.connect(dbname: 'bookmark_manager_test')
