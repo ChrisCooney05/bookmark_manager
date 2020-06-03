@@ -5,16 +5,14 @@ Directions for setting up a database
 - Connect to psql
 - Create the database using the psql command CREATE DATABASE bookmark_manager;
 - Connect to the database using the pqsl command \c bookmark_manager;
-- Run the query we have saved in the file 01_create_bookmarks_table.sql
+- Run the query we have saved in the file 01_create_bookmarks_table.sql located in db/migrations.
 
-In order to test code you may want to look at setting up a test database to go along with this.
-Follow the steps below to set this up
+In order to test code you will want to look at setting up a test database. Follow the steps below to set this up:
 
-```
-$ psql
-admin=# CREATE DATABASE "bookmark_manager_test";
-admin=# CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
-```
+- Connect to psql
+- Create the database using the psql command CREATE DATABASE bookmark_manager_test;
+- Connect to the database using the pqsl command \c bookmark_manager_test;
+- Run the query we have saved in the file 01_create_bookmarks_table.sql also located in db/migrations.
 
 ```
 As a user,
