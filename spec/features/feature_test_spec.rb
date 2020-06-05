@@ -19,15 +19,10 @@ feature 'Add bookmark' do
     visit '/addbookmark'
     expect(page).to have_content "Add bookmark:"
     expect(page).to have_field "url"
-  end
-  
-  scenario 'We should be able to see an added bookmark' do
-    visit '/addbookmark'
-    fill_in 'url', with: 'https://www.bbc.co.uk/'
-    click_button 'Submit'
-    expect(page).to have_content 'https://www.bbc.co.uk'
+    expect(page).to have_field "title"
   end
 end
+  
 
 feature 'Viewing bookmarks' do
   scenario 'A user can see bookmarks' do
@@ -35,12 +30,14 @@ feature 'Viewing bookmarks' do
 
     visit '/addbookmark'
     fill_in 'url', with: 'https://www.bbc.co.uk/'
+    fill_in 'title', with: 'BBC'
     click_button 'Submit'
     visit '/addbookmark'
     fill_in 'url', with: 'http://www.makersacademy.com'
+    fill_in 'title', with: 'Makers'
     click_button 'Submit'
 
-    expect(page).to have_content "https://www.bbc.co.uk/"
-    expect(page).to have_content "http://www.makersacademy.com"
+    expect(page).to have_content "BBC"
+    expect(page).to have_link 'Makers', href: 'http://www.makersacademy.com'
   end
 end

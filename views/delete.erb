@@ -1,0 +1,10 @@
+<h1> Your Bookmarks </h1>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+  <% end %>
+</ul>
+<form action='/confirm-delete' method='POST'>
+  <input type='text' name='delete' placeholder='bookmark to delete'>
+  <input type='submit' value='Delete bookmark'>
+</form>
